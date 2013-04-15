@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 use constant {
-	FILE_SIZE => 20*1024 #Megabytes
+	FILE_SIZE => 5 #20*1024 #Megabytes
 };
 
 #my $hadoop_log_dir = "/data2/mgsys/log/hadoop_log_gw";
