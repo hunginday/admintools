@@ -27,7 +27,7 @@ unless ($filesize >= FILE_SIZE) {
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
 my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $year+1900, $mon, $mday, $hour, $min, $sec);
 
-my $new_file = $file."$postfix";
+my $new_file = $file.".$postfix";
 system ("mv $file $new_file");
 system ("gzip -9 $new_file");
 
