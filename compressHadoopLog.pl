@@ -21,7 +21,7 @@ unless (-e $file) {
 my $fsize = -s $file;
 $fsize = $fsize / (1024*1024);
 
-unless ($filesize >= FILE_SIZE) {
+unless ($fsize >= FILE_SIZE) {
 	print "Hadoop log file is smaller than ".FILE_SIZE." ($fsize)\n";
 	exit 2;
 }
