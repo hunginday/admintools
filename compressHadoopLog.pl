@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 use constant {
-	FILE_SIZE => 1024 #Megabytes
+	FILE_SIZE => 5 #Megabytes
 };
 
 #my $hadoop_log_dir = "/data2/mgsys/log/hadoop_log_gw";
@@ -24,13 +24,11 @@ unless ($filesize >= FILE_SIZE) {
 	print "Hadoop log file is smaller than ".FILE_SIZE." ($filesize)";
 }
 
-my ($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime(time);
-my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $yearOffset+1900, $month+1, $dayOfMonth, $hour, $minute, $second);
+my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $year+1900, $mon, $mday, $hour, $min, $sec);
 
-print $hadoop_log_dir."/$postfix\n";
-
-#system ("mv ");
-
-
+my $new_file = $file."$postfix";
+system ("mv $file $new_file");
+system ("gzip -9 $new_file");
 
 exit 0;
