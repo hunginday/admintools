@@ -15,6 +15,7 @@ my $file = $hadoop_log_dir."/".$file_name;
 
 unless (-e $file) {
 	print "Hadoop log file doesn't exist!\n";
+	exit 1;
 }
 
 my $filesize = -s $file;
@@ -22,6 +23,7 @@ $filesize = $filesize / (1024*1024);
 
 unless ($filesize >= FILE_SIZE) {
 	print "Hadoop log file is smaller than ".FILE_SIZE." ($filesize)";
+	exit 2;
 }
 
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
