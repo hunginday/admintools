@@ -21,10 +21,15 @@ my $filesize = -s $file;
 $filesize = $filesize / (1024*1024);
 
 unless ($filesize >= FILE_SIZE) {
-	print "Hadoop log file is smaller than ".FILE_SIZE." $filesize";
+	print "Hadoop log file is smaller than ".FILE_SIZE." ($filesize)";
 }
 
+($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
+my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $yearOffset+1900, $month, $dayOfMonth, $hour, $minute, $second);
 
+print "$postfix\n";
+
+#system ("mv ");
 
 
 
