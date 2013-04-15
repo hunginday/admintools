@@ -10,7 +10,7 @@ use constant {
 #my $file_name = "hadoop.log";
 
 my $hadoop_log_dir = "/home/mgsys/admintools";
-my $file_name = "compressHadoopLog.pl";
+my $file_name = "file5M.log";
 my $file = $hadoop_log_dir."/".$file_name;
 
 unless (-e $file) {
@@ -18,7 +18,13 @@ unless (-e $file) {
 }
 
 my $filesize = -s $file;
-print "Size: $filesize\n";
+$filesize = $filesize / (1024*1024);
+
+unless ($filesize >= FILE_SIZE) {
+	print "Hadoop log file is smaller than ".FILE_SIZE;
+}
+
+
 
 
 
