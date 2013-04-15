@@ -24,10 +24,10 @@ unless ($filesize >= FILE_SIZE) {
 	print "Hadoop log file is smaller than ".FILE_SIZE." ($filesize)";
 }
 
-($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime(time);
+my ($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime(time);
 my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $yearOffset+1900, $month+1, $dayOfMonth, $hour, $minute, $second);
 
-print "$postfix\n";
+print $hadoop_log_dir."/$postfix\n";
 
 #system ("mv ");
 
