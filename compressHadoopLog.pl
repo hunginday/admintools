@@ -30,14 +30,14 @@ my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
 my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $year+1900, $mon, $mday, $hour, $min, $sec);
 
 my $new_file = $file.".$postfix";
-$rt = system ("mv $file $new_file");
-unless !($rt == 0) {
+my $rt = system ("mv $file $new_file");
+unless ($rt == 0) {
 	print "mv file failed\n";
 	exit 3;
 }
 
 $rt = system ("gzip -9 $new_file");
-unless !($rt == 0) {
+unless ($rt == 0) {
 	print "gzip file failed\n";
 	exit 4;
 }
