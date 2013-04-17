@@ -27,7 +27,7 @@ unless ($fsize >= FILE_SIZE) {
 }
 
 my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
-my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $year+1900, $mon, $mday, $hour, $min, $sec);
+my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $year+1900, $mon+1, $mday, $hour, $min, $sec);
 
 my $new_file = $file.".$postfix";
 my $rt = system ("mv $file $new_file");
