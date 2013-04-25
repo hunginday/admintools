@@ -8,10 +8,18 @@ my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
 my $postfix = sprintf("%04d%02d%02d%02d%02d%02d", $year+1900, $mon+1, $mday, $hour, $min, $sec);
 my $file_name = $log_dir."/".$name.".$postfix";
 
+
+
 open (log_file, '>', $file_name);
 
+
+my $command = "ls -als";
+echo_title($command);
+my $rs = `$command`;
+print log_file $rs;
+
 echo_title("route -n");
-my $rs = `route -n`; 
+$rs = `route -n`; 
 print log_file $rs;
 
 echo_title("crontab -uroot -l");
