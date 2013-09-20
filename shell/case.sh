@@ -16,6 +16,8 @@ case "$1" in
         find $HOME -name \*.sh
         ;;
     stop)
+        echo file{1..5}.txt
+        ls /etc/{resolv.conf,hosts,passwd}
         echo "stop command!"
         ;;
     *)
