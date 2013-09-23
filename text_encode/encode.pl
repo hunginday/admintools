@@ -11,6 +11,7 @@ sub check_utf8($) {
 
 open (MYFILE, 'sample_chinese.log');
 open (F932, "+>:encoding(CP932)", "file.932");
+open (FUTF8, "+>:encoding(UTF-8)", "file.utf8");
 
 my $line = "";
 my $line2 = "";
@@ -18,15 +19,24 @@ my $line2 = "";
 while (<MYFILE>) {
  	chomp;
 	if (check_utf8(\$_)) {
-		print "UTF-8 string\n";
 		$line = $_;
 		$line2 = decode('utf-8', $_);
- 		Encode::from_to($line, 'utf-8', 'cp932');
+		print $line2."\n";
+
+ 		print $line."\n";
+		print FUTF8 $line."\n";
+		print FUTF8 $line2." (decode)\n";
+
+		Encode::from_to($line, 'utf-8', 'cp932');
+
 		print $line."\n";
 		print F932 $line."\n";
+                print F932 $line2." (decode)\n";
 	}
 }
+
 close (MYFILE); 
 close (F932);
+close (FUTF8);
 
 exit 0;
