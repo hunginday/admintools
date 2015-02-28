@@ -14,3 +14,6 @@ print "test2: ".Dumper($scalarRef)."\n";
 print "test3: ".$colour."\n";
 print "test4: ".$scalarRef."\n";
 
+print "test5: ".${$scalarRef}."\n";
+print "test6: ".$$scalarRef."\n";
+
