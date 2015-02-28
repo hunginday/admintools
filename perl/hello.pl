@@ -39,7 +39,7 @@ my @array1 = (1, 2, 3, 4, 5);
 my @array2 = [1, 2, 3, 4, 5];
 
 print "array1: ".Dumper(@array1)."\n";
-print "array2: ".Dumper($array2)."\n";
+print "array2: ".Dumper(@array2)."\n";
 
 
 
