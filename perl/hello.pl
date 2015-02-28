@@ -11,3 +11,6 @@ my $scalarRef = \$colour;
 print "test1: ".Dumper($colour)."\n";
 print "test2: ".Dumper($scalarRef)."\n";
 
+print "test3: ".$colour."\n";
+print "test4: ".$scalarRef."\n";
+
