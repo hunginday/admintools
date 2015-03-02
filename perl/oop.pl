@@ -14,4 +14,4 @@ print ref $animal;       # "HASH"
 bless $animal, "Animal"; # now it is an object of class "Animal"
 print ref $animal;       # "Animal"
 
-print $animal->can_eat("banana");
+print $animal->eat("banana");
