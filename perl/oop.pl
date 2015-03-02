@@ -14,4 +14,10 @@ print ref $animal;       # "HASH"
 bless $animal, "Animal"; # now it is an object of class "Animal"
 print ref $animal;       # "Animal"
 
-print $animal->eat("banana");
+print "\n";
+
+print $animal->eat("banana")."\n";
+
+my $animal2 = Animal->new();
+
+print $animal2->eat("pomelon")."\n";

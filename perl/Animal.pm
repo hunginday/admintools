@@ -3,6 +3,13 @@ use warnings;
 
 package Animal;
 
+# the constructor method
+sub new {
+    # For class methods, the first argument passed is not an object but a class name
+    my $class = shift @_;
+    return bless { "legs" => 4, "colour" => "brown" }, $class;
+}
+
 sub eat {
     # First argument is always the object to act upon.
     my $self = shift @_;
