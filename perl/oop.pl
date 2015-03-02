@@ -4,6 +4,7 @@ use warnings;
 
 require Animal;
 
+# Create a hash ref
 my $animal = {
     "legs"   => 4,
     "colour" => "brown",
@@ -12,3 +13,5 @@ my $animal = {
 print ref $animal;       # "HASH"
 bless $animal, "Animal"; # now it is an object of class "Animal"
 print ref $animal;       # "Animal"
+
+print $animal->can_eat("banana");
