@@ -9,11 +9,12 @@ my @home = ("couch", "chair", "table", "stove");
 
 my ($potato, $lift, $tennis, $pipe) = @home;
 
-my $alpha = "1";
-my $omega = "2";
+my $alpha = "alpha";
+my $omega = "omega";
 
 ($alpha, $omega) = ($omega, $alpha);
 
 print "alpha=$alpha\n";
 print "omega=$omega\n";
 
+print "end\n";
