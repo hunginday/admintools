@@ -7,6 +7,7 @@ use Data::Dumper;
 #===== define some vars =============
 my $whence = "hello";
 my $moles = 10;
+my $file = "/etc/temp.log";
 #====================================
 
 my $answer = 42; # an integer
