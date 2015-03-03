@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 use Data::Dumper;
+use Camel;
 
 #===== define some vars =============
 my $whence = "hello";
