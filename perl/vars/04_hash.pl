@@ -23,6 +23,8 @@ my %wife;
 $wife{"Adam"} = "Eve";
 $wife{"Jacob"} = ["Leah", "Rachel", "Bilhah", "Zilpah"]; # a ref to an unamed array
 
+print $wife{"Jacob"}->[0]."\n";
+print $wife{"Jacob"}[0]."\n";
 
 my %kids_of_wife;
 $kids_of_wife{"Jacob"} = {
@@ -31,5 +33,8 @@ $kids_of_wife{"Jacob"} = {
     "Bilhah" => ["Dan", "Naphtali"],
     "Zilpah" => ["Gad", "Asher"],
 };
+
+print $kids_of_wife{"Jacob"}->{"Leah"}->[0]."\n";
+print $kids_of_wife{"Jacob"}{"Leah"}[0]."\n";
 
 print "end\n";
