@@ -18,7 +18,18 @@ my %longday2 = (
     "Sat" => "Saturday",
 );
 
+
 my %wife;
 $wife{"Adam"} = "Eve";
+$wife{"Jacob"} = ["Leah", "Rachel", "Bilhah", "Zilpah"]; # a ref to an unamed array
+
+
+my %kids_of_wife;
+$kids_of_wife{"Jacob"} = {
+    "Leah"   => ["Reuben", "Simeon", "Levi", "Judah", "Issachar", "Zebulun"],
+    "Rachel" => ["Joseph", "Benjamin"],
+    "Bilhah" => ["Dan", "Naphtali"],
+    "Zilpah" => ["Gad", "Asher"],
+};
 
 print "end\n";
