@@ -38,4 +38,4 @@ my $ary_ref = [1,2,3,4,5]; # reference to an unnamed array
 my $hsh_ref = {Na => 19, Cl => 35}; # reference to an unnamed hash
 my $sub_ref = sub { print $state }; # reference to an unnamed subroutine
 
-my $fido = Camel–>new("Amelia"); # reference to an object
+my $fido = Camel->new("Amelia"); # reference to an object
