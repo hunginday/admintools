@@ -27,7 +27,7 @@ my $sign = "I love my $pet"; # string with interpolation
 my $cost = 'It costs $100'; # string without interpolation
 my $thence = $whence; # another variable's value
 my $salsa = $moles * $avocados; # a gastrochemical expression
-my $exit = system("vi $file"); # numeric status of a command
+my $exit = system("ls $file"); # numeric status of a command
 my $cwd = `pwd`; # string output from a command
 
 my $ary = \@myarray; # reference to a named array
