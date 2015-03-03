@@ -7,7 +7,6 @@ use Data::Dumper;
 #===== define some vars =============
 my $whence = "hello";
 my $moles = 10;
-my $avocados = 20;
 #====================================
 
 my $answer = 42; # an integer
