@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 use Data::Dumper;
-use Camel;
+require Camel;
 
 my $camels = "123";
 print $camels + 1, "\n";
