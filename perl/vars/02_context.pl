@@ -11,3 +11,5 @@ print $camels + 1, "\n";
 my $fido = Camel->new();
 if (not $fido) { die "dead camel"; }
 $fido->saddle();
+
+print "end\n";
