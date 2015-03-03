@@ -8,6 +8,14 @@ use Data::Dumper;
 my $whence = "hello";
 my $moles = 10;
 my $file = "/etc/temp.log";
+
+my $state   = "hello scalars"; 
+my @myarray = ("hello", "scalars");
+my %myhash  = ("hello", "scalars");
+
+sub mysub {
+    return 1;
+}
 #====================================
 
 my $answer = 42; # an integer
@@ -20,16 +28,6 @@ my $thence = $whence; # another variable's value
 my $salsa = $moles * $avocados; # a gastrochemical expression
 my $exit = system("vi $file"); # numeric status of a command
 my $cwd = `pwd`; # string output from a command
-
-#===== define some vars =============
-my $state   = "hello scalars"; 
-my @myarray = ("hello", "scalars");
-my %myhash  = ("hello", "scalars");
-
-sub mysub {
-    return 1;
-}
-#====================================
 
 my $ary = \@myarray; # reference to a named array
 my $hsh = \%myhash; # reference to a named hash
