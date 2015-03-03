@@ -8,7 +8,8 @@ require Camel;
 my $camels = "123";
 print $camels + 1, "\n";
 
-my $fido = Camel–>new("Amelia");
+#my $fido = Camel–>new("Amelia");
+my $fido = Camel–>new();
 if (not $fido) { die "dead camel"; }
 $fido–>saddle();
 
