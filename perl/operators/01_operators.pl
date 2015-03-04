@@ -16,4 +16,11 @@ print "line = $line\n";
 print "fill = $fill\n";
 print "val = $val\n";
 
+
+my $a = my $b = my $c = 10;
+print "a = $a, b = $b, c = $c\n";
+
+($a -= 32) *= 5/9;
+print "a = $a\n";
+
 print "end\n";

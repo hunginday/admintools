@@ -40,4 +40,17 @@ my $sub_ref = sub { print $state }; # reference to an unnamed subroutine
 
 my $fido = Camel->new("Amelia"); # reference to an object
 
+
+#====================================
+
+# ${days}               Same as $days but unambiguous before alphanumerics
+# $Dog::days            Different $days variable, in the Dog package
+# $#days                Last index of array @days
+# $days–>[28]           29th element of array pointed to by reference $days
+# $days[0][2]           Multidimensional array
+# $days{2000}{"Feb"}    Multidimensional hash
+# $days{2000,"Feb"}     Multidimensional hash emulation
+
+
+
 print "end\n";
