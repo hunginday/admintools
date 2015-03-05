@@ -4,6 +4,7 @@ use warnings;
 
 use Data::Dumper;
 
+# Define a hash
 my %longday1 =   ("Sun", "Sunday", "Mon", "Monday", "Tue", "Tuesday",
                 "Wed", "Wednesday", "Thu", "Thursday", "Fri",
                 "Friday", "Sat", "Saturday");
@@ -17,6 +18,20 @@ my %longday2 = (
     "Fri" => "Friday",
     "Sat" => "Saturday",
 );
+
+# Define a hash reference
+my $rec = {
+    NAME    => "John Smith",
+    RANK    => "Captain",
+    SERNO   => "951413",
+};
+
+# list context
+print (%longday2);
+print "\n\n";
+
+
+print "".Dumper(keys(%longday2))."\n";
 
 
 my %wife;
