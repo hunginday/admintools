@@ -65,5 +65,37 @@ my $table2 = {
 # ref to an anonymous subroutine
 my $coderef = sub { print "Boink!\n" };
 
+# Dereferences
+# $bar = $$scalarref;
+# push(@$arrayref, $filename);
+# $$arrayref[0] = "January"; # Set the first element of @$arrayref
+# @$arrayref[4..6] = qw/May June July/; # Set several elements of @$arrayref
+# %$hashref = (KEY => "RING", BIRD => "SING"); # Initialize whole hash
+# $$hashref{KEY} = "VALUE"; # Set one key/value pair
+# @$hashref{"KEY1","KEY2"} = ("VAL1","VAL2"); # Set two more pairs
+# &$coderef(1,2,3);
+# say $handleref "output";
+
+# $bar = ${$scalarref};
+# push(@{$arrayref}, $filename);
+# ${$arrayref}[0] = "January";
+# @{$arrayref}[4..6] = qw/May June July/;
+# ${$hashref}{"KEY"} = "VALUE";
+# @{$hashref}{"KEY1","KEY2"} = ("VAL1","VAL2");
+# &{$coderef}(1,2,3);
+
+
+my $refrefref = \\\"howdy";
+print $$$$refrefref;
+print "\n";
+print ${${${$refrefref}}};
+print "\n";
+
+
+my $hashtest = {"a" => 1, "b" => 2, "c" => 3};
+@{$hashtest}{"a", "b"} = (4, 5);
+print @{$hashtest}{"a", "b"};
+print "\n";
+
 
 print "end\n";
