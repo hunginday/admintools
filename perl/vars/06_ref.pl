@@ -4,9 +4,9 @@ use warnings;
 
 use Data::Dumper;
 
-$aref = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+my $aref = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-$href = {
+my $href = {
     "Sun" => "Sunday",
     "Mon" => "Monday",
     "Tue" => "Tuesday",
@@ -16,15 +16,15 @@ $href = {
     "Sat" => "Saturday"
 };
 
-$sref = sub {
-    $a = shift;
-    $b = shift;
+my $sref = sub {
+    my $a = shift;
+    my $b = shift;
 
-    print "hello world: $a + $b\n";
-}
+    return $a + $b;
+};
 
-print $aref–>["mon"]."\n";  # an array dereference
-print $href–>{"Sun"}."\n";  # a hash dereference
-print $sref–>(1,2)."\n";    # a subroutine dereference
+print $aref->[3]."\n";      # an array dereference
+print $href->{"Sun"}."\n";  # a hash dereference
+print $sref->(1,2)."\n";    # a subroutine dereference
 
 print "end\n";
