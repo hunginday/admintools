@@ -17,4 +17,20 @@ use Data::Dumper;
 # $coderef–>(Presto => 192); #3
 
 
+my $listref = [
+    "a",
+    ["b"],
+    ["c","d","replaced"],
+];
+
+print "array = ".Dumper(@{$listref})."\n";
+
+$listref->[2][2] = "hello";
+$$listref[2][2] = "world";
+${${$listref}[2]}[2] = "i";
+${$$listref[2]}[2] = "am";
+$listref->[2]->[2] = "hanoi";
+
+print "array = ".Dumper(@{$listref})."\n";
+
 print "end\n";
