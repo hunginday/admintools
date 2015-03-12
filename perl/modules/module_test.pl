@@ -1,5 +1,8 @@
 use v5.10;
 use Bestiary::OO;
+use Bestiary::Horse;
+
+use Data::Dump qw(dump); # CPAN module
 
 my $bestiary = Bestiary::OO->new; # class method
 say "Animal is ", $bestiary->camel(),
@@ -8,6 +11,11 @@ say "Animal is ", $bestiary->camel(),
 
 use Bestiary qw(camel $weight);
 say "Animal is ", camel(), " has weight $weight";
+
+print "\n\n";
+
+my $steed = Bestiary::Horse->new(color => "dun");
+dump $steed;
 
 print "end\n";
 
