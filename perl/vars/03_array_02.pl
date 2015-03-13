@@ -50,4 +50,10 @@ print "last_rev @last_rev \n";
 
 print @last_rev;
 
+use 5.012;
+@rocks = qw/ bedrock slate rubble granite /;
+while( my( $index, $value ) = each @rocks ) {
+    say "$index: $value";
+}
+
 print "\n\n\n$#array: end\n";
