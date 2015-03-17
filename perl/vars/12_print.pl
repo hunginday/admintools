@@ -27,3 +27,12 @@ if (exists $hashref->{"dino"}) {
 
 
 dump $hashref;
+
+my $temp = 33;
+($temp -= 32) *= 5;
+
+my ($a,$b,$c);
+
+$a = $b = $c = 0;
+
+print "temp = $temp\n";
