@@ -3,7 +3,7 @@
 CURL_MODE="--compressed"
 HOME_FOLDER=/hungtd/git/study/shell
 
-rtag () { local IFS=\< ; read -d \< E ;}
+read_tag () { local IFS=\< ; read -d \< E ;}
 
 download_song () {
     echo "\"$folder_name/$song_title.mp3\", $song_mp3_url"
@@ -29,7 +29,7 @@ mkdir $folder_name
 
 prev_tag=""
 
-while rtag; do
+while read_tag; do
     if [[ "$prev_tag" =~ ^title\> ]]; then
         current_title="$E"
     fi
