@@ -11,17 +11,16 @@ download_song () {
     wget -O "$song_title.mp3" $song_mp3_url
 }
 
-read -p "Input URL: " input_url
+read -p "Input Zing mp3 URL: " input_url
 
-xml_url=`curl $CURL_MODE $input_url 2>/dev/null | grep -oE '<embed id.*></embed>' | sed -e 's/.*xmlURL=\(.*\)\&amp;.*/\1/'`
+xml_url=`curl $CURL_MODE $input_url 2>/dev/null | grep -o '<embed id.*>' | grep -o 'http://mp3[^&]*'`
 xml_content=`curl $CURL_MODE $xml_url 2>/dev/null`
 
-if [[ "$input_url" =~ .*bai-hat.* ]]; then
-    folder_name=`echo $input_url | sed -e 's/.*bai-hat\/\(.*\)\/.*/\1/'`
-    echo $folder_name
-elif [[ "$input_url" =~ .*album.* ]]; then
-    folder_name=`echo $input_url | sed -e 's/.*album\/\(.*\)\/.*/\1/'`
-    echo $folder_name
+if [[ "$input_url" =~ http://.*/.*/(.*)/.* ]]; then
+    folder_name=${BASH_REMATCH[1]}
+else
+    echo "Wrong input format!"
+    exit
 fi
 
 cd $HOME_FOLDER
