@@ -9,4 +9,5 @@ xml_content=`curl $CURL_MODE $xml_url 2>/dev/null`
 song_mp3_url=`echo $xml_content | grep -oE '<source>.*</source>' | sed -e 's/.*\[CDATA\[\(.*\)\]\].*/\1/'`
 song_title=`echo $xml_content | grep -oE '<title>.*</title>' | sed -e 's/.*\[CDATA\[\(.*\)\]\].*/\1/' | xargs`
 
-curl -o "$song_title.mp3" -L $song_mp3_url
+#curl -o "$song_title.mp3" -L $song_mp3_url
+wget -O "$song_title.mp3" $song_mp3_url
