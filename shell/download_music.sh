@@ -6,8 +6,7 @@ HOME_FOLDER=/hungtd/git/study/shell
 rtag () { local IFS=\< ; read -d \< E ;}
 
 download_song () {
-    full_path="\"$folder_name/$song_title.mp3\""
-    echo "$full_path, $song_mp3_url"
+    echo "\"$folder_name/$song_title.mp3\", $song_mp3_url"
     cd $HOME_FOLDER/$folder_name
     wget -O "$song_title.mp3" $song_mp3_url
 }
