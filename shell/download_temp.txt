@@ -1,0 +1,74 @@
+<embed id="player" wmode="transparent" allowscriptaccess="always" allowfullscreen="true" width="860" height="240" src="http://static.mp3.zdn.vn/skins/zmp3-v4.1/flash/player.zingmp3_6.2.8.swf" flashvars="autostart=true&amp;xmlURL=http://mp3.zing.vn/xml/song-xml/LHxHyZmaWLscXhktLbcTvHZH&amp;textad=http%3A%2F%2Fapi.adtimaserver.vn%2Frdext%2Fjson%3FzoneId%3D2215645070117788516%26count%3D1">
+
+
+
+cat out.html | sed -e 's/.*xmlURL=\(.*\)\&amp;.*/\1/'
+
+
+HTTP/1.0 200 OK
+Date: Sun, 26 Apr 2015 17:12:12 GMT
+Content-Type: text/xml;charset=utf-8
+Pragma: public
+Cache-Control: maxage=1800
+Expires: Sun, 26 Apr 2015 17:42:12 GMT
+Content-Encoding: gzip
+X-Cache: MISS from VNG-Cache-123
+Via: 1.1 VNG-Cache-123:84 (Lusca)
+
+
+<data page="http://mp3.zing.vn/bai-hat/Dat-Viet-Buc-Tuong/ZW6FODWZ.html">
+    <item type="mp3">
+        <title><![CDATA[ Đất Việt]]></title>
+        <performer><![CDATA[Bức Tường]]></performer>
+        <link><![CDATA[ http://mp3.zing.vn/tim-kiem/bai-hat.html?q=Buc+Tuong]]></link>
+        <source><![CDATA[http://mp3.zing.vn/xml/load-song/MjAxNCUyRjEyJTJGMzAlMkYzJTJGZiUyRjNmMjlhNGVjZjQ2YmM1ZGIwZDM5OGE1MDg5YTA5MDU1Lm1wMyU3QzEz]]></source>
+        <hq><![CDATA[require vip]]></hq>
+        <duration>532</duration>
+        <lyric><![CDATA[]]></lyric>
+        <mvlink><![CDATA[]]></mvlink>
+        <backimage><![CDATA[http://image.mp3.zdn.vn/cover3_artist/f/3/f3b0e796e64a0087a3eec52269ffad77_1411834886.jpg]]></backimage>
+        <errorcode>0</errorcode>
+        <errormessage></errormessage>
+    </item>
+</data>
+
+
+
+1. Viết script tải bài hát từ mp3.zing.vn, đặt tên file tải về là tên bài hát
+     Ví dụ bài hát: http://mp3.zing.vn/bai-hat/Dat-Viet-Buc-Tuong/ZW6FODWZ.html
+2. Viết script tải album từ mp3.zing.vn, các file bài hát tải về năm trong thư mục có tên là tên album
+     Ví dụ album: http://mp3.zing.vn/album/Ke-O-Mien-Xa-Quang-Le/ZWZAIFOI.html
+3. Ghép 2 scripts của bài 1 và bài 2 để thành 1 script đặt tên là mp3zing.sh và có các tính năng sau:
+     - Show help cho -h và —help
+     - Show version cho -v và —version
+     - Tự nhận biết url mp3 zing là album hay bài hát để tải về
+     - Show help cho tất cả các trường hợp khác, đồng thời exit khác 0
+
+
+
+
+<data page="http://mp3.zing.vn/bai-hat/Dat-Viet-Buc-Tuong/ZW6FODWZ.html">
+    <item type="mp3">
+        <title><![CDATA[ Đất Việt]]></title>
+        <performer><![CDATA[Bức Tường]]></performer>
+        <link><![CDATA[ http://mp3.zing.vn/tim-kiem/bai-hat.html?q=Buc+Tuong]]></link>
+        <source><![CDATA[http://mp3.zing.vn/xml/load-song/MjAxNCUyRjEyJTJGMzAlMkYzJTJGZiUyRjNmMjlhNGVjZjQ2YmM1ZGIwZDM5OGE1MDg5YTA5MDU1Lm1wMyU3QzEz]]></source>
+        <hq><![CDATA[require vip]]></hq>
+        <duration>532</duration>
+        <lyric><![CDATA[]]></lyric>
+        <mvlink><![CDATA[]]></mvlink>
+        <backimage><![CDATA[http://image.mp3.zdn.vn/cover3_artist/f/3/f3b0e796e64a0087a3eec52269ffad77_1411834886.jpg]]></backimage>
+        <errorcode>0</errorcode>
+        <errormessage></errormessage>
+    </item>
+</data>
+
+
+<embed id="player" wmode="transparent" allowscriptaccess="always" allowfullscreen="true" width="860" height="240" src="http://static.mp3.zdn.vn/skins/zmp3-v4.1/flash/player.zingmp3_6.2.8.swf" flashvars="songid=1&amp;autostart=true&amp;xmlURL=http://mp3.zing.vn/xml/album-xml/LGcHtLHaBaRlNdNyLbJtbHkm&amp;textad=http%3A%2F%2Fapi.adtimaserver.vn%2Frdext%2Fjson%3FzoneId%3D870285593013603088%26count%3D1">
+
+curl --compressed http://mp3.zing.vn/xml/album-xml/ZHJnTkmaVaRSsVNykvcyvHLn 2>/dev/null
+
+http://mp3.zing.vn/xml/album-xml/ZHJnTkmaVaRSsVNykvcyvHLn
+
+
+
