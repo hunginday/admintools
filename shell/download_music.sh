@@ -47,3 +47,7 @@ while read_tag; do
 
     prev_tag="$E"
 done <<< $xml_content
+
+#titles=`echo $xml_content | grep -o '<title>.*</title>' | sed -e 's/.*\[CDATA\[\(.*\)\]\].*/\1/'`
+#sources=`echo $xml_content | grep -o '<source>.*</source>' | sed -e 's/.*\[CDATA\[\(.*\)\]\].*/\1/'`
+

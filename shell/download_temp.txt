@@ -66,6 +66,10 @@ Via: 1.1 VNG-Cache-123:84 (Lusca)
 
 <embed id="player" wmode="transparent" allowscriptaccess="always" allowfullscreen="true" width="860" height="240" src="http://static.mp3.zdn.vn/skins/zmp3-v4.1/flash/player.zingmp3_6.2.8.swf" flashvars="songid=1&amp;autostart=true&amp;xmlURL=http://mp3.zing.vn/xml/album-xml/LGcHtLHaBaRlNdNyLbJtbHkm&amp;textad=http%3A%2F%2Fapi.adtimaserver.vn%2Frdext%2Fjson%3FzoneId%3D870285593013603088%26count%3D1">
 
+
+http://mp3.zing.vn/bai-hat/Dat-Viet-Buc-Tuong/ZW6FODWZ.html
+http://mp3.zing.vn/album/Ke-O-Mien-Xa-Quang-Le/ZWZAIFOI.html
+
 curl --compressed http://mp3.zing.vn/xml/album-xml/ZHJnTkmaVaRSsVNykvcyvHLn 2>/dev/null
 
 http://mp3.zing.vn/xml/album-xml/ZHJnTkmaVaRSsVNykvcyvHLn
