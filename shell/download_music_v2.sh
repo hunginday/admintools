@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 OUT_FOLDER=/hungtd/git/study/shell
 CURL_MODE="--compressed"
 VERSION=0.9
