@@ -14,7 +14,11 @@ my %all = (
 
 print "1. @gilligan\n";
 
-print "2. " . $all{Gilligan}. "\n";
+print "2. " . "$all{Gilligan}". "\n";
+
+print "3. " . "@{$all{Gilligan}}". "\n";
+
+print "4. " . "$all{Gilligan}->[0]". "\n";
 
 my $all_ref = \%all;
 
