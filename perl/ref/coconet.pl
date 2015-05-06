@@ -32,5 +32,5 @@ sub sort_function {
        $sum_b += $total_bytes{$b}{$hash_key};
     }
 
-    return $sum_b <=> $sum_a;
+    $sum_b <=> $sum_a;
 }
