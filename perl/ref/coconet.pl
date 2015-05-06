@@ -16,7 +16,7 @@ while (<>) {
 for my $source ( sort sort_function keys %total_bytes ) {
     for my $destination ( sort { $total_bytes{$source}{$b} <=> $total_bytes{$source}{$a} } keys %{ $total_bytes{$source} } ) {
         print "$source => $destination:",
-        " $total_bytes{$source}{$destination} bytes\n";
+        "\t$total_bytes{$source}{$destination}\tbytes\n";
     }
     print "\n";
 }
@@ -32,5 +32,5 @@ sub sort_function {
        $sum_b += $total_bytes{$b}->{$hash_key};
     }
 
-    return $sum_a <=> $sum_b;
+    return $sum_b <=> $sum_a;
 }
