@@ -24,12 +24,12 @@ for my $source ( sort sort_function keys %total_bytes ) {
 sub sort_function {
     my $sum_a = 0;
     for my $hash_key ( keys %{$total_bytes{$a}} ) {
-       $sum_a += $total_bytes{$a}->{$hash_key};
+       $sum_a += $total_bytes{$a}{$hash_key};
     }
 
     my $sum_b = 0;
     for my $hash_key ( keys %{$total_bytes{$b}} ) {
-       $sum_b += $total_bytes{$b}->{$hash_key};
+       $sum_b += $total_bytes{$b}{$hash_key};
     }
 
     return $sum_b <=> $sum_a;
