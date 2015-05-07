@@ -33,3 +33,5 @@ for my $source (@sources) {
     }
     print "\n";
 }
+
+print Dumper(\%total_bytes);
