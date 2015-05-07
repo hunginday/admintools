@@ -28,8 +28,8 @@ for my $source (@sources) {
     print "$source: $total_bytes{$source}{$all} total bytes sent\n";
     for my $destination (@destinations) {
         next if $destination eq $all;
-        print " $source => $destination:",
-        " $total_bytes{$source}{$destination} bytes\n";
+        print " $destination:",
+        " $total_bytes{$source}{$destination}\n";
     }
     print "\n";
 }
