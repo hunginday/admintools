@@ -20,9 +20,29 @@ my %all = (
 check_items_for_all(\%all);
 
 sub check_items_for_all {
-    die "You need to fill in check_items_for_all";
+    my $all_ref = shift;
+    my %missing = ( );
+
+    my @required = qw(preserver sunscreen water_bottle jacket);
+
+    foreach my $person (keys %$all_ref) {
+        for my $item (@required) {
+            my %person_hash = map { $_ => 1 } @{ $all_ref->{$person} };
+            unless ( $person_hash{$item} ) { # not found in list?
+                print "$person is missing $item.\n";
+                push @{ $missing{$person} }, $item;
+            }
+        }
+        if (@{ $missing{$person} }) {
+            print "Adding \"@{$missing{$person}}\" to \"@{ $all_ref->{$person} }\" for $person.\n";
+            push @{ $all_ref->{$person} }, @{ $missing{$person} };
+        }
+    }
 }
 
+dump \%all;
+
+# not used
 sub check_required_items {
     my $who = shift;
     my $items = shift;
@@ -32,8 +52,8 @@ sub check_required_items {
 
     for my $item (@required) {
         unless ( $whose_items{$item} ) { # not found in list?
-        print "$who is missing $item.\n";
-        push @missing, $item;
+            print "$who is missing $item.\n";
+            push @missing, $item;
         }
     }
     if (@missing) {
