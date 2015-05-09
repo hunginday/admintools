@@ -4,7 +4,7 @@ BEGIN {
 }
 
 {
-    b[$1, "___",$2] += $3
+    b[$1, "___", $2] += $3
     a[$1] += $3
 }
 
@@ -31,8 +31,7 @@ END {
     for (i=num; i>=1; i--) {
         print indices[i], ":", a[indices[i]], "total bytes sent"
         for (k=numb; k>=1; k--) {
-            z = "^" indices[i]
-            if ( indicesb[k] ~ z ) {print indicesb[k], b[indicesb[k]]}
+            if ( indicesb[k] ~ "^" indices[i] ) {print indicesb[k], b[indicesb[k]]}
         }
     }
 }
