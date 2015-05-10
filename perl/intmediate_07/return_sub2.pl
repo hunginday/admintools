@@ -9,13 +9,13 @@ use v5.10;
 sub create_sub {
     my $count = shift;
 
-    return (sub {
+    sub {
         $count++;
         say "count+1 = $count"
     }, sub {
         $count *= 2;
         say "count*2 = $count"
-    });
+    };
 }
 
 my ($sub1, $sub2) = create_sub(10);
