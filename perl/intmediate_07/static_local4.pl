@@ -6,19 +6,22 @@ use Data::Dumper;
 use Data::Dump qw(dump); # CPAN module
 use v5.10;
 
+sub create_sub {
+    state $count = 0; # It's a STATE var!!
 
-count_down();
-count_down();
-count_down();
-
-{
-state $countdown = 10; # actually assigned in run-time only
-sub count_down { $countdown-- }
-sub count_remaining { $countdown }
+    sub {
+        $count++;
+        say "count+1 = $count"
+    }, sub {
+        $count *= 2;
+        say "count*2 = $count"
+    };
 }
 
-count_down();
-count_down();
-count_down();
-print "we're down to ", count_remaining(), " coconuts!\n";
+my ($sub1, $sub2) = create_sub();
+$sub1->();
+$sub2->();
 
+my ($sub3, $sub4) = create_sub();
+$sub3->();
+$sub4->();
