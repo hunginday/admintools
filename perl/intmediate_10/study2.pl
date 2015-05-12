@@ -29,10 +29,11 @@ sub data_for_path {
                 my @new_paths = map {
                     catfile( $path, $_ )
                 }
-                grep { ! /^\.\.?\z/ } 
-                readdir $dh;
+                    grep { ! /^\.\.?\z/ } 
+                        readdir $dh;
 
                 unshift @queue, map { [ $_, $hash ] } @new_paths;
+
                 $hash;
             }
         };
