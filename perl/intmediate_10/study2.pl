@@ -25,18 +25,19 @@ sub data_for_path {
             else {
                 my $hash = {};
                 opendir (my $dh, $path);
-                
+
                 my @new_paths = map {
                     catfile( $path, $_ )
                 }
                 grep { ! /^\.\.?\z/ } 
                 readdir $dh;
-                
+
                 unshift @queue, map { [ $_, $hash ] } @new_paths;
                 $hash;
             }
         };
     }
+
     $data;
 }
 
