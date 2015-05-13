@@ -22,3 +22,7 @@ Navigation::get_me_home();
 my @destination = @Navigation::homeport;
 say "destination: ";
 dump \@destination;
+
+my $localport = $Navigation::localport;
+say "localport: ";
+dump \$localport;

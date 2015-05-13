@@ -8,6 +8,8 @@ use v5.14;
 
 our @homeport = (21.283, -157.842);
 
+my $localport = 10;
+
 sub turn_toward_heading {
 #.. code here ..
 }
