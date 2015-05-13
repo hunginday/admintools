@@ -23,6 +23,12 @@ my @destination = @Navigation::homeport;
 say "destination: ";
 dump \@destination;
 
+
+# my @destination2 = @Navigation::homeport;
+# say "destination2: ";
+# dump \@destination2;
+
+
 my $localport = $Navigation::localport;
 say "localport: ";
 dump \$localport;
