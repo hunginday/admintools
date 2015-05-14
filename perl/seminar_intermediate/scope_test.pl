@@ -4,6 +4,9 @@ use strict;
 
 use vars qw($foo);
 
+our $infra = "infra";
+my $test = "test";
+
 $foo = "Yo!";
 print "\$foo: $foo\n";
 
@@ -28,3 +31,7 @@ sub subroutine {
 package Bar;
 
 print "\$foo: $foo\n";
+print "\$infra: $infra\n";
+
+my $local_test = $main::test;
+print "\$main::test: $local_test\n";
