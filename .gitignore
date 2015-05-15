@@ -1,1 +1,13 @@
+# Mac
 .DS_Store
+._*
+# vi
+*.swp
+# Emacs
+*~
+# Hidemaru
+*.BAK
+# Carton
+/local/*
+# Test
+.prove
