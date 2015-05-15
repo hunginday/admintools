@@ -18,9 +18,6 @@ while (<>) {
     push @unsorted, $_;
 }
 
-@unsorted = ("Beckie Silvestrini A",
-  "Joesph Degonia A");
-
 timethese( 0, {
     "schwartzian" => sub { @sorted1 = 
                                 map{ $_->[0] }
