@@ -46,7 +46,7 @@ for (1..$lim) {
     my $name = $firstnames[rand @firstnames] . " " . $firstnames[rand @firstnames] . " " . $lastnames[rand @lastnames];
     my @months = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
     my $day = 1 + int(rand(28));
-    my $year = 1900 + int(rand(115));
+    my $year = 1900 + int(rand(2015-1900));
     my $date = $day . " " . $months[rand @months]. " " . $year;
     my $city = $cities[rand @cities]->[2];
 
