@@ -17,7 +17,7 @@ while (<>) {
     push @unsorted, $_;
 }
 
-my $sorted = name_sort(\@unsorted);
+my $sorted = name_sort2(\@unsorted);
 
 dump $sorted;
 
