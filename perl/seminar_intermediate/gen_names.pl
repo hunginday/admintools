@@ -50,7 +50,7 @@ for (1..$lim) {
     my $date = $day . " " . $months[rand @months]. " " . $year;
     my $city = $cities[rand @cities]->[2];
 
-    print "$name, $date, $city\n";
+    print "$name,$date,$city\n";
 }
 
 
