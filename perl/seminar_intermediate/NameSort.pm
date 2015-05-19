@@ -22,11 +22,13 @@ sub name_sort2 {
     my @sorted = 
         map { $_->[0] }
         sort {
+            # print "sort is called\n";
             $a->[1] cmp $b->[1] or
             $a->[2] <=> $b->[2] or
             $a->[3] cmp $b->[3] }
         map {
             m/(.*?)\s*(\S+),.*?(\d\d\d\d),(.*$)/;
+            # print "map is called\n";
             [ $_, "$2 $1", $3, $4 ] }
         @$input;
 

@@ -21,3 +21,4 @@ my $sorted = name_sort2(\@unsorted);
 
 dump $sorted;
 
+print "\n";
