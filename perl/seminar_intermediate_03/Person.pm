@@ -20,14 +20,14 @@ sub new {
 }
 
 sub AUTOLOAD {
-    print "Person::AUTOLOAD() called\n";
+    #print "Person::AUTOLOAD() called\n";
     my $self = shift;
 
     # only handle instance methods, not class methods
     # croak "$self not an object" unless reftype($self);
 
     my $name = our $AUTOLOAD;
-    print "name: $name called\n";
+    #print "name: $name called\n";
 
     return if $name =~ /::DESTROY$/;
     
@@ -35,6 +35,6 @@ sub AUTOLOAD {
         croak "Can't access '$name' field in $self";
     }
 
-    if (@_) {print "...set args @_\n"; return $self->{$name} = shift }
-    else {print "...get args: $self->{$name}\n"; return $self->{$name} }
+    if (@_) { return $self->{$name} = shift }
+    else { return $self->{$name} }
 }
