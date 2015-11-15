@@ -1,11 +1,14 @@
 #!/bin/bash
 
-if (( 5 > 4 ))
+var1=5
+var2=4
+
+if (( "$var1" > "$var2" ))
 then
-    echo "5 > 4"
+    echo "var1 > var2"
 fi
 
-if [ 5 > 4 ]
+if [ "$var1" -gt "$var2" ]
 then
-    echo "5 > 4"
+    echo "var1 > var2"
 fi
