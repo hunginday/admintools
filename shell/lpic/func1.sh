@@ -23,7 +23,7 @@ case $input in
         func2
         ;;
     3)
-        input_function hungtd
+        input_function $input2
         ;;
     *)
         echo "there is no valid input"
